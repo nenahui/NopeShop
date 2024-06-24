@@ -4,13 +4,15 @@ import { Cart } from './containers/Cart/Cart';
 import { Favorite } from './containers/Favorite/Favorite';
 import { Notification } from './containers/Notification/Notification';
 import { Toolbar } from './components/Toolbar/Toolbar';
-import { Box } from '@radix-ui/themes';
+import { Container } from '@radix-ui/themes';
+import { Header } from './components/Header/Header';
 
 export const App = () => {
   return (
-    <Box width={'400px'}>
+    <Container width={'400px'}>
       <header>
-        <Toolbar />
+        <Toolbar my={'3'} />
+        <Header my={'3'} />
       </header>
       <Routes>
         <Route path='/' element={<Main />} />
@@ -18,6 +20,6 @@ export const App = () => {
         <Route path='/favorite' element={<Favorite />} />
         <Route path='/notification' element={<Notification />} />
       </Routes>
-    </Box>
+    </Container>
   );
 };
