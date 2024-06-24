@@ -14,9 +14,14 @@ import { MinusCircledIcon, PlusCircledIcon } from '@radix-ui/react-icons';
 interface Props {
   card: ICard;
   addToCart?: (drug: ICard) => void;
+  removeFromCart?: (card: ICard) => void;
 }
 
-export const CardItem: React.FC<Props> = ({ card, addToCart }) => {
+export const CardItem: React.FC<Props> = ({
+  card,
+  addToCart,
+  removeFromCart,
+}) => {
   return (
     <Box maxWidth={'190px'}>
       <Card size={'2'} variant={'classic'}>
@@ -63,7 +68,7 @@ export const CardItem: React.FC<Props> = ({ card, addToCart }) => {
               variant={'ghost'}
               size={'1'}
               onClick={() => {
-                addToCart ? addToCart(card) : null;
+                removeFromCart ? removeFromCart(card) : null;
               }}
             >
               <MinusCircledIcon width={22} height={22} />

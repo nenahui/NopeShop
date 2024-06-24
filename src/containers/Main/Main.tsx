@@ -7,21 +7,36 @@ import { Tabs } from '../../components/Tabs/Tabs';
 export interface Props {
   drugsList: ICard[];
   addToCart: (card: ICard) => void;
+  removeFromCart: (card: ICard) => void;
 }
 
-export const Main: React.FC<Props> = ({ drugsList, addToCart }) => {
+export const Main: React.FC<Props> = ({
+  drugsList,
+  addToCart,
+  removeFromCart,
+}) => {
   const [drugsFilter, setDrugsFilter] = useState<drugsTypes>('All');
 
   const changeFilter = (filter: drugsTypes) => setDrugsFilter(filter);
 
   const drugsAllElements = drugsList.map((drug) => (
-    <CardItem addToCart={addToCart} key={drug.id} card={drug} />
+    <CardItem
+      addToCart={addToCart}
+      removeFromCart={removeFromCart}
+      key={drug.id}
+      card={drug}
+    />
   ));
 
   const drugsFiltered = drugsList.map(
     (drug) =>
       drug.type === drugsFilter && (
-        <CardItem addToCart={addToCart} key={drug.id} card={drug} />
+        <CardItem
+          addToCart={addToCart}
+          removeFromCart={removeFromCart}
+          key={drug.id}
+          card={drug}
+        />
       )
   );
 

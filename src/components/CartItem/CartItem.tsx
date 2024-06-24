@@ -15,10 +15,16 @@ import { MinusCircledIcon, PlusCircledIcon } from '@radix-ui/react-icons';
 interface Props {
   drug: ICard;
   increaseCount: (drug: ICard) => void;
+  removeFromCart: (drug: ICard) => void;
   my?: string;
 }
 
-export const CartItem: React.FC<Props> = ({ drug, increaseCount, my }) => {
+export const CartItem: React.FC<Props> = ({
+  drug,
+  increaseCount,
+  removeFromCart,
+  my,
+}) => {
   return (
     <Box my={my}>
       <Card>
@@ -44,7 +50,7 @@ export const CartItem: React.FC<Props> = ({ drug, increaseCount, my }) => {
               </Button>
             </Tooltip>
             <Tooltip content={`Reduce the amount of ${drug.name}`}>
-              <Button variant={'ghost'}>
+              <Button variant={'ghost'} onClick={() => removeFromCart(drug)}>
                 <MinusCircledIcon width={'20px'} height={'20px'} />
               </Button>
             </Tooltip>

@@ -10,6 +10,8 @@ import { Banner } from './components/Banner/Banner';
 import { useState } from 'react';
 import { ICard } from './types';
 import { nanoid } from 'nanoid';
+import { Footer } from './components/Footer/Footer';
+import { Alert } from './components/Alert/Alert';
 
 import HeroinImage from '/herion.jpg';
 import CocaineImage from '/Cocaine.jpg';
@@ -17,7 +19,6 @@ import MarijuanaImage from '/maria.jpg';
 import MephedroneImage from '/mefedron.jpg';
 import HashishImage from '/gashish.jpg';
 import AmphetamineImage from '/amfetamin.jpg';
-import { Footer } from './components/Footer/Footer';
 
 export const App = () => {
   const [drugs, setDrugs] = useState<ICard[]>([
@@ -89,6 +90,18 @@ export const App = () => {
     });
   };
 
+  const removeFromCart = (card: ICard) => {
+    console.log(drugs);
+    setDrugs((prevState) => {
+      return prevState.map((drug) => {
+        if (drug.id === card.id) {
+          return { ...drug, count: drug.count - 1 };
+        }
+        return drug;
+      });
+    });
+  };
+
   return (
     <Container width={'400px'} height={'100%'}>
       <header>
@@ -101,12 +114,26 @@ export const App = () => {
       <Routes>
         <Route
           path='/'
-          element={<Main addToCart={addToCart} drugsList={drugs} />}
+          element={
+            <Main
+              addToCart={addToCart}
+              removeFromCart={removeFromCart}
+              drugsList={drugs}
+            />
+          }
         />
         <Route
           path='/cart'
-          element={<Cart increaseCount={addToCart} drugs={drugs} />}
-        />
+          element={
+            <Cart
+              increaseCount={addToCart}
+              removeFromCart={removeFromCart}
+              drugs={drugs}
+            />
+          }
+        >
+          <Route path={'order'} element={<Alert drugs={drugs} />} />
+        </Route>
         <Route path='/favorite' element={<Favorite />} />
         <Route path='/notification' element={<Notification />} />
       </Routes>
