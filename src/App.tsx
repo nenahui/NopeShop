@@ -7,6 +7,7 @@ import { Toolbar } from './components/Toolbar/Toolbar';
 import { Container } from '@radix-ui/themes';
 import { Header } from './components/Header/Header';
 import { Banner } from './components/Banner/Banner';
+import { Tabs } from './components/Tabs/Tabs';
 
 export const App = () => {
   return (
@@ -18,6 +19,9 @@ export const App = () => {
       <main>
         <Banner my={'3'} />
       </main>
+      <section>
+        <Tabs my={'3'} />
+      </section>
       <Routes>
         <Route path='/' element={<Main />} />
         <Route path='/cart' element={<Cart />} />

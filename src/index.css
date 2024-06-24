@@ -1,3 +1,9 @@
 * {
     font-family: 'DM Sans', sans-serif !important;
 }
+
+svg, img, iframe {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
