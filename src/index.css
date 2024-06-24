@@ -2,8 +2,15 @@
     font-family: 'DM Sans', sans-serif !important;
 }
 
-svg, img, iframe {
+svg, iframe {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    border-radius: 10px;
+    object-fit: fill;
 }
