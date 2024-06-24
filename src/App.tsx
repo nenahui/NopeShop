@@ -6,6 +6,7 @@ import { Notification } from './containers/Notification/Notification';
 import { Toolbar } from './components/Toolbar/Toolbar';
 import { Container } from '@radix-ui/themes';
 import { Header } from './components/Header/Header';
+import { Banner } from './components/Banner/Banner';
 
 export const App = () => {
   return (
@@ -14,6 +15,9 @@ export const App = () => {
         <Toolbar my={'3'} />
         <Header my={'3'} />
       </header>
+      <main>
+        <Banner my={'3'} />
+      </main>
       <Routes>
         <Route path='/' element={<Main />} />
         <Route path='/cart' element={<Cart />} />

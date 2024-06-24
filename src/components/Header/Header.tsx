@@ -22,7 +22,7 @@ export const Header: React.FC<Props> = ({ my }) => {
         </Heading>
         <Text color={'gray'}>{locationText}</Text>
       </Box>
-      <AvatarIcon width={40} height={40} />
+      <AvatarIcon width={40} height={40} style={{ cursor: 'pointer' }} />
     </Flex>
   );
 };
