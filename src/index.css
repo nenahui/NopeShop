@@ -11,6 +11,12 @@ svg, iframe {
 img {
     max-width: 100%;
     display: block;
-    border-radius: 10px;
+    border-radius: 5px;
     object-fit: fill;
+}
+
+footer {
+    width: 400px;
+    position: absolute;
+    bottom: -60px;
 }
