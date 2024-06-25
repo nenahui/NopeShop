@@ -14,7 +14,7 @@ export const DataItem: React.FC<Props> = ({ drug }) => {
           <DataList.Label minWidth='88px'>Status</DataList.Label>
           <DataList.Value>
             <Badge color='jade' variant='soft' radius='full'>
-              In processingAuthorized
+              In processing
             </Badge>
           </DataList.Value>
         </DataList.Item>
