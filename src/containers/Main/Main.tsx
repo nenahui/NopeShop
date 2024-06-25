@@ -1,7 +1,7 @@
+import React, { useState } from 'react';
 import { CardItem } from '../../components/CardItem/CardItem';
 import { Flex, Grid } from '@radix-ui/themes';
 import { drugsTypes, ICard } from '../../types';
-import React, { useState } from 'react';
 import { Tabs } from '../../components/Tabs/Tabs';
 
 export interface Props {

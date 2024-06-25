@@ -1,8 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import { Main } from './containers/Main/Main';
 import { Cart } from './containers/Cart/Cart';
-import { Favorite } from './containers/Favorite/Favorite';
-import { Notification } from './containers/Notification/Notification';
+import { Delivery } from './containers/Delivery/Delivery';
 import { Toolbar } from './components/Toolbar/Toolbar';
 import { Container } from '@radix-ui/themes';
 import { Header } from './components/Header/Header';
@@ -134,8 +133,7 @@ export const App = () => {
         >
           <Route path={'order'} element={<Alert drugs={drugs} />} />
         </Route>
-        <Route path='/favorite' element={<Favorite />} />
-        <Route path='/notification' element={<Notification />} />
+        <Route path='/order' element={<Delivery drugs={drugs} />} />
       </Routes>
       <footer>
         <Footer my={'3'} />

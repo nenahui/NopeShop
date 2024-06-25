@@ -17,7 +17,7 @@ export const Footer: React.FC<Props> = ({ my }) => {
           <NavLink to={'/cart'}>Cart</NavLink>
         </TabNav.Link>
         <TabNav.Link asChild>
-          <NavLink to={'/favorite'}>Favorite</NavLink>
+          <NavLink to={'/order'}>Orders</NavLink>
         </TabNav.Link>
       </Flex>
     </TabNav.Root>
