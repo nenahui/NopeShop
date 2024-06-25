@@ -78,7 +78,6 @@ export const App = () => {
   ]);
 
   const addToCart = (card: ICard) => {
-    console.log(drugs);
     setDrugs((prevState) => {
       return prevState.map((drug) => {
         if (drug.id === card.id) {
@@ -90,7 +89,6 @@ export const App = () => {
   };
 
   const removeFromCart = (card: ICard) => {
-    console.log(drugs);
     setDrugs((prevState) => {
       return prevState.map((drug) => {
         if (drug.id === card.id) {
