@@ -89,14 +89,16 @@ export const App = () => {
   };
 
   const removeFromCart = (card: ICard) => {
-    setDrugs((prevState) => {
-      return prevState.map((drug) => {
-        if (drug.id === card.id) {
-          return { ...drug, count: drug.count - 1 };
-        }
-        return drug;
+    if (card.count > 0) {
+      setDrugs((prevState) => {
+        return prevState.map((drug) => {
+          if (drug.id === card.id) {
+            return { ...drug, count: drug.count - 1 };
+          }
+          return drug;
+        });
       });
-    });
+    }
   };
 
   return (
